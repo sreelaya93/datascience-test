@@ -10,13 +10,6 @@ The aim of this repository is to build a strong foundation, while I continue to 
 📂 Repository Contents
 🐍 Python Concepts & Data Science Libraries
 
-Inheritance (inheritancee.py)
-
-Demonstrates how an object can access attributes of another object in another class using Inheritance in Python.
-
-Data Visualization (matplotlibb.py)
-
-Uses the Matplotlib library for creating simple and effective data visualizations.
 
 NumPy Arrays (numpyy.py)
 
@@ -26,9 +19,15 @@ Data Manipulation (pandass.py)
 
 Uses the Pandas library for handling and analyzing structured datasets.
 
-Polymorphism (polymorphism.py)
+Matplotlib  (matplotlibb.py)
 
-Explains the Polymorphism concept in OOP, showing different behaviors of methods in different instances.
+Uses the Matplotlib library for creating simple and effective data visualizations.
+
+Seaborn (Seabornn.py)
+
+Seaborn is a data visualization library in python built on top of matplotlib
+
+
 
 🚀 Next Steps
 
