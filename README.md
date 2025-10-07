@@ -29,11 +29,11 @@ Seaborn is a data visualization library in python built on top of matplotlib
 
 
 
-🚀 Next Steps
+  Next Steps
 
 I will continue to update this repository with:
 
-✅ Data Science Projects
+  Data Science Projects
 
 Exploratory Data Analysis (EDA)
 
@@ -41,7 +41,7 @@ Working with real datasets (CSV/Excel)
 
 Data Cleaning and Preprocessing
 
-✅ Machine Learning Basics
+  Machine Learning Basics
 
 Linear & Logistic Regression
 
@@ -49,7 +49,7 @@ Decision Trees & Random Forests
 
 Clustering (K-Means)
 
-✅ Deep Learning (future scope)
+  Deep Learning (future scope)
 
 Neural Networks using TensorFlow / PyTorch
 
@@ -58,6 +58,6 @@ Neural Networks using TensorFlow / PyTorch
 🌐 LinkedIn
  (Add your LinkedIn link here)
 
-📂 GitHub Profile
+  GitHub Profile
  (Add your GitHub profile link)
 

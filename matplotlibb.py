@@ -1,4 +1,4 @@
-#                                   matplotlib with x label,y label,title,font dict
+#                      plot with x label,y label,title,font dict
 
 # import matplotlib.pyplot as plt
 # import numpy as np
@@ -157,7 +157,7 @@
 # import numpy as np
 # x=np.array([1,2,3,4])
 # y=np.array([5,4,6,3])
-# plt.bar(x,y,width=)
+# plt.bar(x,y,width=.5)
 # # plt.barh(x,y,color='yellow')
 # plt.show()
 
@@ -177,6 +177,7 @@
 
 # import matplotlib.pyplot as  plt
 # import numpy as np
+
 # x=np.array([30,25,25,20])
 # mylabels=['a','b','c','d']
 # myex=[.2,0,0,0]
@@ -185,7 +186,17 @@
 
 #---------------------------------------------------------------
 
+#                             heatmap
+
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 #
+# df=sns.load_dataset('iris')
+# corr=df.corr(numeric_only=True)
+#
+# sns.heatmap(corr,annot=True,cmap='coolwarm')
+# plt.show()
+
 
 
 
