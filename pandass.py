@@ -115,7 +115,7 @@
 
 # import pandas as pd
 # df=pd.read_csv(r"C:\Users\Sreelaya K P\Downloads\titanic (1).csv")
-
+# print(df.info())
 # print(df.head(10))
 # print(df.shape)
 # print(df.columns)
@@ -131,7 +131,10 @@
 # print(df['age'])
 
 #---------------------------------------------------------------------------------------------------
-
+# import pandas as pd
+# df=pd.read_csv(r"C:\Users\Sreelaya K P\Downloads\titanic (1).csv")
+# print(df.shape)
+# print(df.isnull())
 
 
 
