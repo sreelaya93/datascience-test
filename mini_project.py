@@ -1,5 +1,7 @@
-from cProfile import label
-from statistics import linear_regression, LinearRegression  # project 1
+
+#                    LinearRegression
+#                   project 1
+
 
 # Data visualization project using numpy,pandas,matplotlib and seaborn
 
@@ -192,7 +194,7 @@ from statistics import linear_regression, LinearRegression  # project 1
 #
 # # scatter plot (use color to represent the 3rd  x  variable )
 #
-# sc=ax.scatter(df['bedrooms'],df['area'],df['price'],c=df['bathrooms'],cmap='viridis',s=50,alpha=0.6)
+# sc=ax.scatter(df['bedrooms'],df['area'],df['price'],c=df['bathrooms'],cmap='viridis',s=30,alpha=0.5)
 # plt.colorbar(sc,label='Bathrooms')   # legend for color
 #
 # ax.set_xlabel('Bedrooms')
@@ -203,30 +205,283 @@ from statistics import linear_regression, LinearRegression  # project 1
 
 #--------------------------------------------------------------------------------------------------------
 
-import seaborn as sns
+# import seaborn as sns
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# from sklearn import linear_model
+#
+# a=sns.load_dataset('tips')
+# df=a
+# print(df)
+#
+# x=df[['size']]
+# y=df['total_bill']
+#
+# model=linear_model.LinearRegression()
+# model.fit(x,y)
+# pre=model.predict([[6]])
+# print('predicted total bill : ',pre[0])
+#
+# plt.xlabel('size')
+# plt.ylabel('total bill')
+# plt.title('tips')
+#
+# plt.scatter(df['size'],df.total_bill,marker='*',color='yellow')
+# plt.plot(df['size'],model.predict(x),color='black')
+# plt.show()
+
+#--------------------------------------------------------------------------------------------------
+
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+# import pandas as pd
+# from sklearn import linear_model
+#
+# df=sns.load_dataset('diamonds')
+# print(df)
+#
+# a=df['price'].mean()
+# df['price']=df['price'].fillna(a)
+# print(df['price'])
+#
+# x=df[['carat']]
+# y=df['price']
+#
+# model=linear_model.LinearRegression()
+# model.fit(x,y)
+# pre=model.predict([[0.23]])
+# print('predicted price : ',pre[0])
+#
+# plt.xlabel('carat')
+# plt.ylabel('price')
+# plt.title('Diamonds')
+#
+# plt.scatter(df['carat'],df['price'],marker='*',color='green')
+# plt.plot(df['carat'],model.predict(x),color='black')
+# plt.show()
+
+#------------------------------------------------------------------------------------------------
+
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# from  sklearn import linear_model
+#
+# a={'town':['monroe township','monroe township','monroe township','west windsor','west windsor','west windsor','robbinsville','robbinsville','robbinsville'],
+#     'area':[2600,3000,3200,3600,4000,2600,2800,3300,3600],'price':[550000,565000,610000,680000,725000,585000,615000,650000,710000]}
+# data=pd.DataFrame(a)
+# print(data)
+#
+# dummies=pd.get_dummies(data.town)
+# merge=pd.concat([data,dummies],axis=1)
+# merge=merge.drop(['town'],axis=1)
+# print(merge)
+#
+# x=merge.drop(['price'],axis=1)
+# y=merge.price
+# model=linear_model.LinearRegression()
+# model.fit(x,y)
+# pre=model.predict([[3000,0,0,1]])
+# print('predicted price : ',pre[[0]])
+# model.score(x,y)
+#
+# plt.scatter(data.area,data.price,marker='*',color='green')
+# plt.plot(data.area,model.predict(x),color='red')
+# plt.show()
+
+#--------------------------------------------------------------------------------------------------
+
+# import pandas as pd
+# from sklearn import linear_model
+# from sklearn.model_selection import train_test_split
+# from sklearn.metrics import mean_squared_error
+#
+# df=pd.read_csv(r"C:\Users\Sreelaya K P\Downloads\archive (2)\BMW sales data (2010-2024) (1).csv")
+# #print(df)
+# #print(df.columns)
+#
+# x=df[['Mileage_KM','Year']]
+# y=df[['Price_USD']]
+# xtrain,xtest,ytrain,ytest=train_test_split(x,y,test_size=.3)
+#
+# model=linear_model.LinearRegression()
+# model.fit(xtrain,ytrain)
+# pre=model.predict(xtest)
+# print(ytest)
+# print('predicted price = ',pre)
+# error=mean_squared_error(pre,ytest)
+# print(error)
+
+#--------------------------------------------------------------------------------------------------
+
+# import pandas as pd
+# from sklearn import linear_model
+# from sklearn.model_selection import train_test_split
+#
+# df=pd.read_csv(r"C:\Users\Sreelaya K P\Downloads\archive (2)\BMW sales data (2010-2024) (1).csv")
+# #print(df)
+# x=df[['Mileage_KM']]
+# y=df['Price_USD']
+#
+# x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.2,random_state=42)
+#
+# model=linear_model.LinearRegression()
+# model.fit(x_train,y_train)
+# pre=model.predict(x_test)
+# print('Actual price : ',y_test.values)
+# print('predicted price : ',pre)
+# print('accuracy : ',model.score(x_test,y_test))
+
+#----------------------------------------------------------------------------------------
+
+#            Logistic Regression
+
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# from sklearn.linear_model import LogisticRegression
+# from sklearn.model_selection import train_test_split
+# data=pd.read_csv(r"C:\Users\Sreelaya K P\Downloads\insurance_data.csv")
+# x=data[['age']]
+# y=data['bought_insurance']
+# x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.2,random_state=42)
+#
+# plt.scatter(x,y,marker='*',color='red')
+# plt.xlabel('age')
+# plt.ylabel('insurance')
+# plt.show()
+#
+# model=LogisticRegression()
+# model.fit(x_train,y_train)
+# y_pre=model.predict(x_test)
+#
+#
+# print(y_test)
+# print(model.score(x_test,y_test))
+
+#----------------------------------------------------------------------------------------------
+
+#                                           Decision Tree
+
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# from sklearn import tree
+# from sklearn.preprocessing import LabelEncoder
+#
+#
+# data={'age':['young','young','middle','senior','senior','middle'],
+#     'income':['high','medium','high','medium','low','low'],
+#     'buys_com':['no','no','yes','yes','no','yes']
+#     }
+# df=pd.DataFrame(data)
+# print(df)
+#
+# #        convert categorical data to numeric
+#
+# le_age=LabelEncoder()
+# le_income=LabelEncoder()
+# le_buy=LabelEncoder()
+#
+# df['age_n']=le_age.fit_transform(df['age'])
+# df['income_n']=le_income.fit_transform(df['income'])
+# df['buy_n']=le_buy.fit_transform(df['buys_com'])
+#
+# #        define features(x) and target(y)
+#
+# x=df[['age_n','income_n']]
+# y=df['buy_n']
+#
+# #        create and train the decision tree model
+#
+# model=tree.DecisionTreeClassifier(criterion='entropy')
+# model.fit(x,y)
+#
+# #         make a prediction (eg:- predict for a new person (age=senior,income=medium) )
+#
+# pre=model.predict([[le_age.transform(['senior'])[0],le_income.transform(['medium'])[0]]])
+#
+# print('prediction : ',le_buy.inverse_transform(pre)[0])
+#
+# #          visualize the tree
+#
+# plt.figure(figsize=(8,6))
+# tree.plot_tree(model,feature_names=['age','income'],class_names=le_buy.classes_,filled=True)
+# plt.show()
+
+#------------------------------------------------------------------------------------------------------------------
+
+#                                     Decision Tree
+
+# import pandas as pd
+# from sklearn import tree
+# from sklearn.preprocessing import LabelEncoder
+# data=pd.read_csv(r"C:\Users\Sreelaya K P\Downloads\Salary.csv")
+# print(data)
+# inputs=data.drop(['salary_more_then_100k'],axis='columns')
+# target=data['salary_more_then_100k']
+# le_data=LabelEncoder()
+# company_l=le_data.fit_transform(inputs['company'])
+# job_l=le_data.fit_transform(inputs['job'])
+# degree_l=le_data.fit_transform(inputs['degree'])
+# inputs['company']=company_l
+# inputs['job']=job_l
+# inputs['degree']=degree_l
+# model=tree.DecisionTreeClassifier()
+# model.fit(inputs,target)
+# print('accuracy : ',model.score(inputs,target))
+# print('prediction : ',model.predict([[2,0,0]]))
+# print(inputs)
+
+#-------------------------------------------------------------------------------------------
 import pandas as pd
-import matplotlib.pyplot as plt
+import matplotlib as plt
 from sklearn import linear_model
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+iris=load_iris()
+from sklearn.svm import SVC
 
-a=sns.load_dataset('tips')
-df=a
-print(df)
 
-x=df[['size']]
-y=df['total_bill']
 
-model=linear_model.LinearRegression()
-model.fit(x,y)
-pre=model.predict([[6]])
-print('predicted total bill : ',pre[0])
+#---------------------------------------------------------------------------------------------------------
 
-plt.xlabel('size')
-plt.ylabel('total bill')
-plt.title('tips')
+#                     support super vector
 
-plt.scatter(df['size'],df.total_bill,marker='*',color='yellow')
-plt.plot(df['size'],model.predict(x),color='black')
-plt.show()
+# import numpy as np
+# import pandas as pd
+# from sklearn.model_selection import train_test_split
+# from sklearn.feature_extraction.text import TfidfVectorizer
+# from sklearn.svm import SVC
+# from sklearn.metrics import accuracy_score, classification_report
+#
+# # Sample dataset (emails & labels: 1 for spam, 0 for not spam)
+# emails = ["Win a lottery now", "Meeting scheduled for tomorrow", "Get discount on medicines",
+#           "Your bank account is updated", "Urgent: Update your password"]
+# labels = [1, 0, 1, 0, 1]  # Spam = 1, Not Spam = 0
+#
+# # Convert text data into numerical form using TF-IDF Vectorizer
+# vectorizer = TfidfVectorizer()
+# X = vectorizer.fit_transform(emails)
+#
+# # Splitting dataset into training and testing sets
+# X_train, X_test, y_train, y_test = train_test_split(X, labels, test_size=0.2, random_state=42)
+#
+# # Train the SVM model
+# svm_model = SVC(kernel='linear', C=1.0)
+# svm_model.fit(X_train, y_train)
+#
+# # Make predictions
+# y_pred = svm_model.predict(X_test)
+#
+# # Evaluate performance
+# accuracy = accuracy_score(y_test, y_pred)
+# report = classification_report(y_test, y_pred)
+#
+# print("Model Accuracy:", accuracy)
+# print("Classification Report:\n", report)
+
+
+
+
+
 
 
 
