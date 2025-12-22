@@ -51,12 +51,9 @@ Clustering (K-Means)
 
   Deep Learning (future scope)
 
-Neural Networks using TensorFlow / PyTorch
-
 🔗 Connect with Me
 
-🌐 LinkedIn
- (Add your LinkedIn link here)
+🌐 LinkedIn : linkedin.com/in/sreelaya-k-p-ba9000308
 
   GitHub Profile
  (Add your GitHub profile link)
