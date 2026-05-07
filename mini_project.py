@@ -226,8 +226,8 @@
 # plt.ylabel('total bill')
 # plt.title('tips')
 #
-# plt.scatter(df['size'],df.total_bill,marker='*',color='yellow')
-# plt.plot(df['size'],model.predict(x),color='black')
+# plt.scatter(x,y,marker='*',color='yellow')
+# plt.plot(x,model.predict(x),color='black')
 # plt.show()
 
 #--------------------------------------------------------------------------------------------------
@@ -289,15 +289,15 @@
 # plt.show()
 
 #--------------------------------------------------------------------------------------------------
-
+ #                        Linear Regression
 # import pandas as pd
 # from sklearn import linear_model
 # from sklearn.model_selection import train_test_split
 # from sklearn.metrics import mean_squared_error
 #
 # df=pd.read_csv(r"C:\Users\Sreelaya K P\Downloads\archive (2)\BMW sales data (2010-2024) (1).csv")
-# #print(df)
-# #print(df.columns)
+# print(df)
+# print(df.columns)
 #
 # x=df[['Mileage_KM','Year']]
 # y=df[['Price_USD']]
@@ -309,7 +309,7 @@
 # print(ytest)
 # print('predicted price = ',pre)
 # error=mean_squared_error(pre,ytest)
-# print(error)
+# print('error : ',error)
 
 #--------------------------------------------------------------------------------------------------
 
@@ -333,7 +333,7 @@
 
 #----------------------------------------------------------------------------------------
 
-#            Logistic Regression
+  #                                Logistic Regression
 
 # import pandas as pd
 # import matplotlib.pyplot as plt
@@ -352,7 +352,6 @@
 # model=LogisticRegression()
 # model.fit(x_train,y_train)
 # y_pre=model.predict(x_test)
-#
 #
 # print(y_test)
 # print(model.score(x_test,y_test))
@@ -373,7 +372,7 @@
 #     }
 # df=pd.DataFrame(data)
 # print(df)
-#
+
 # #        convert categorical data to numeric
 #
 # le_age=LabelEncoder()
@@ -408,6 +407,8 @@
 
 #------------------------------------------------------------------------------------------------------------------
 
+
+
 #                                     Decision Tree
 
 # import pandas as pd
@@ -431,19 +432,43 @@
 # print(inputs)
 
 #-------------------------------------------------------------------------------------------
-import pandas as pd
-import matplotlib as plt
-from sklearn import linear_model
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-iris=load_iris()
-from sklearn.svm import SVC
 
+
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# from sklearn.datasets import load_iris
+# from sklearn.model_selection import train_test_split
+# iris=load_iris()
+# from sklearn.svm import SVC
+# dir(iris)
+# print(iris.feature_names)
+# data=pd.DataFrame(iris.data,columns=iris.feature_names)
+# data['targets']=iris.target
+# print(iris.target_names)
+# data['flower_name']=data.targets.apply(lambda x:iris.target_names[x])
+# data0=data[data.targets==0]
+# data1=data[data.targets==1]
+# data2=data[data.targets==2]
+#
+# plt.scatter(data0['sepal length (cm)'],data0['sepal width (cm)'],marker='*', color='green')
+# plt.show()
+# plt.scatter(data1['sepal length (cm)'],data1['sepal width (cm)'],marker='*', color='green')
+# plt.show()
+# plt.scatter(data2['sepal length (cm)'],data2['sepal width (cm)'],marker='*', color='green')
+# plt.show()
+#
+# x=data.drop(['targets','flower_name'],axis='columns')
+# y=data.targets
+# xtrain,xtest,ytrain,ytest=train_test_split(x,y,test_size=0.2)
+# model=SVC()
+# model.fit(xtrain,ytrain)
+# print(model.score(xtest,ytest))
+# print(model.predict(xtest))
 
 
 #---------------------------------------------------------------------------------------------------------
 
-#                     support super vector
+#                     support vector machine
 
 # import numpy as np
 # import pandas as pd
@@ -465,11 +490,11 @@ from sklearn.svm import SVC
 # X_train, X_test, y_train, y_test = train_test_split(X, labels, test_size=0.2, random_state=42)
 #
 # # Train the SVM model
-# svm_model = SVC(kernel='linear', C=1.0)
-# svm_model.fit(X_train, y_train)
+# model = SVC(kernel='linear', C=1.0)
+# model.fit(X_train, y_train)
 #
 # # Make predictions
-# y_pred = svm_model.predict(X_test)
+# y_pred =model.predict(X_test)
 #
 # # Evaluate performance
 # accuracy = accuracy_score(y_test, y_pred)
@@ -478,12 +503,154 @@ from sklearn.svm import SVC
 # print("Model Accuracy:", accuracy)
 # print("Classification Report:\n", report)
 
+#-----------------------------------------------------------------------------------------------
 
+#                               Random Forest
 
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 
+# from sklearn.datasets import load_digits
+# from sklearn.model_selection import train_test_split
+# from sklearn.ensemble import RandomForestClassifier
+# digits=load_digit()
+# for i in range(3):
+#     plt.matshow(digits.images[i])
+# print(digits.target)
+# print(digits.target_names)
+#
+# data=pd.DataFrame(digits.data)
+# data['target']=digits.target
+# x=data.drop(['target'],axis=1)
+# y=data.target
+# xtrain,xtest,ytrain,ytest=train_test_split(x,y,test_size=.2)
+# model=RandomForestClassifier()
+# model.fit(xtrain,ytrain)
+# print(model.score(xtest,ytest))
+# y_truth=ytest
+# y_predicted=model.predict(xtest)
+# from sklearn.metrics import confusion_matrix
+# cm=confusion_matrix(y_truth,y_predicted)
+# plt.figure(figsize=(10,7))
+# seaborn.heatmap(cm,annot=True)
+# plt.show()
 
+#------------------------------------------------------------------------
 
+# import pandas as ps
+# from seaborn import load_dataset
+# from sklearn.metrics import accuracy_score, classification_report
+# from sklearn.model_selection import train_test_split
+# from sklearn.ensemble import RandomForestClassifier
+# import seaborn as sns
+#
+# titanic_data=sns.load_dataset('titanic')
+# titanic_data=titanic_data.dropna(subset=['survived'])
+# print(titanic_data)
+# x=titanic_data[['pclass','sex','age','sibsp','parch','fare']]
+# y=titanic_data['survived']
+# x['sex']=x['sex'].map({'female':0,'male':1})
+# x['age']=x['age'].fillna(x['age'].median())
+# xtrain,xtest,ytrain,ytest=train_test_split(x,y,test_size=.2,random_state=42)
+# rf_classifier=RandomForestClassifier(n_estimators=100,random_state=42)
+# rf_classifier.fit(xtrain,ytrain)
+# y_pred=rf_classifier.predict(xtest)
+# accuracy=accuracy_score(ytest,y_pred)
+# classification_rep=classification_report(ytest,y_pred)
+#
+# print('accuracy:{accuracy :.2f}')
+# print('\n classification report : \n',classification_rep)
+# sample=xtest.iloc[0:1]
+# prediction=rf_classifier.predict(sample)
 
+#-------------------------------------------------------------------------------
+
+# import pandas as pd
+# from pyexpat import features
+# from sklearn.model_selection import train_test_split
+# from sklearn.ensemble import RandomForestClassifier
+# from sklearn.datasets import load_iris
+# from sklearn.metrics import accuracy_score, classification_report
+#
+# data=load_iris()
+# x=data.data
+# y=data.target
+#
+# xtrain,xtest,ytrain,ytest=train_test_split(x,y,test_size=.25,random_state=42)
+# model=RandomForestClassifier(n_estimators=150,max_depth=5,random_state=42)
+# model.fit(xtrain,ytrain)
+# pre=model.predict(xtest)
+#
+# print('accuracy : ',accuracy_score(ytest,pre))
+# print('classification report : ',classification_report(ytest,pre))
+#
+# #feature important
+# feature_imp=pd.DataFrame({'feature':data.feature_names,
+#                           'importance':model.feature_importances_}).sort_values(by='importance',ascending=False)
+# print(feature_imp)
+#
+# # sample prediction
+#
+# sample=[[5.0,3.5,1.3,0.2]]
+# prediction=model.predict(sample)
+# print('predicted species : ',data.target_names[prediction][0])
+
+#----------------------------------------------------------------------------------------------------------------------
+
+#                               K Nearest Neighbour
+
+# import pandas as pd
+# from sklearn.model_selection import train_test_split
+# from sklearn.neighbors import KNeighborsClassifier
+#
+# data={'maths':[20,30,40,50,60,70,80,90],
+#       'science':[25,35,45,55,65,75,85,95],
+#       'result':['fail','fail','fail','fail','pass','pass','pass','pass']
+#       }
+#
+# df=pd.DataFrame(data)
+# print(df)
+#
+# x=df[['maths','science']]
+# y=df['result']
+# xtrain,xtest,ytrain,ytest=train_test_split(x,y,test_size=0.3)
+#
+# model=KNeighborsClassifier(n_neighbors=3)
+# model.fit(xtrain,ytrain)
+# pre=model.predict(xtest)
+#
+# print('prediction : ',pre)
+# print('actual : ',ytest)
+# print('accuracy : ',model.score(xtest,ytest))
+
+#-----------------------------------------------------------------------------------
+
+#                           k means clustering algorithm (Unsupervised Learning Algorithm)
+
+# import pandas as pd
+# from sklearn.model_selection import train_test_split
+# from sklearn.cluster import KMeans
+# import matplotlib.pyplot as plt
+#
+# data={'age':[20,21,22,23,24,25],
+#       'income':[2000,2100,2200,2300,2400,2500]
+#       }
+# df=pd.DataFrame(data)
+# print(df)
+#
+# xtrain,xtest=train_test_split(df,test_size=0.2,random_state=1)
+#
+# model=KMeans(n_clusters=2,random_state=1)
+# model.fit(xtrain)
+# pre=model.predict(xtest)
+# print('test data : ',pre)
+#
+# plt.scatter(df['age'],df['income'],c=model.predict(df),marker='*')
+# plt.title('K means clustering')
+# plt.xlabel('age')
+# plt.ylabel('income')
+# plt.show()
 
 
 

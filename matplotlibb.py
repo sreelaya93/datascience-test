@@ -153,12 +153,17 @@
 
 #                        bar
 
-# import matplotlib.pyplot as plt
-# import numpy as np
+#import matplotlib.pyplot as plt
+#import numpy as np
+
 # x=np.array([1,2,3,4])
 # y=np.array([5,4,6,3])
-# plt.bar(x,y,width=.5)
+# plt.bar(x,y,width=.8)
 # # plt.barh(x,y,color='yellow')
+
+# x=['a','b','c','d']
+# y=[10,20,30,40]
+# plt.bar(x,y)
 # plt.show()
 
 #-----------------------------------------------------------
@@ -166,9 +171,9 @@
 #                     histogram
 
 # import matplotlib.pyplot as plt
-# import numpy as np
-# a=np.random.normal(170,10,250)
-# plt.hist(a)
+#
+# data=[10,12,10,11,13,14,10,15,10,11]
+# plt.hist(data, bins=10)
 # plt.show()
 
 #-----------------------------------------------------------
@@ -177,7 +182,7 @@
 
 # import matplotlib.pyplot as  plt
 # import numpy as np
-
+#
 # x=np.array([30,25,25,20])
 # mylabels=['a','b','c','d']
 # myex=[.2,0,0,0]
@@ -196,6 +201,18 @@
 #
 # sns.heatmap(corr,annot=True,cmap='coolwarm')
 # plt.show()
+
+
+# import seaborn as sns
+# import matplotlib.pyplot as plt
+#
+# data = [[90, 80, 85],
+#         [60, 70, 75],
+#         [40, 50, 60]]
+#
+# sns.heatmap(data, annot=True, cmap='coolwarm')
+# plt.show()
+
 
 
 

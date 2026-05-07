@@ -1,12 +1,12 @@
-# from pydoc import describe
-#
-# #                                          pandas with dataframe
-#
-#
-# # import pandas as pd
-# # emp={'id':[1,2,3,4],'name':['a','b','c','d'],'age':[10,10,11,23],'salary':[1000,2000,3000,4000]}
-# # df=pd.DataFrame(emp)
-# # print(df)
+
+
+#                                           pandas with dataframe
+
+
+#  import pandas as pd
+#  emp={'id':[1,2,3,4],'name':['a','b','c','d'],'age':[10,10,11,23],'salary':[1000,2000,3000,4000]}
+#  df=pd.DataFrame(emp)
+#  print(df)
 #
 # #---------------------------------------------------------------------------------------------------------
 #
@@ -26,22 +26,23 @@
 #
 # #------------------------------------------------------------------------------------
 #
-# # import pandas as pd
-# # s=[{'name':'a','id':1},{'name':'b','id':2},{'name':'c','id':3}]
-# # d=pd.DataFrame(s)
-# # print(d)
+# import pandas as pd
+# s=[{'name':'a','id':1},{'name':'b','id':2},{'name':'c','id':3}]
+# d=pd.DataFrame(s)
+# print(d.columns)
+# print(d)
 #
 # # -------------------------------------------------------------------------------------------------
 #
-# # import pandas as pd
-# # stud={'name':['laya','kala','diya','chiya'],'mark':[30,334,32,31]}
-# # d=pd.DataFrame(stud)
-# # print(d)
-#
-# # import pandas as pd
-# # v={'veg':['tomato','onion','potato','chilly'],'quantity':[1,1,1,1],'price':[20,32,24,15]}
-# # d=pd.DataFrame(v)
-# # print(d)
+# import pandas as pd
+# stud={'name':['laya','kala','diya','chiya'],'mark':[30,334,32,31]}
+# d=pd.DataFrame(stud)
+# print(d)
+
+# import pandas as pd
+# v={'veg':['tomato','onion','potato','chilly'],'quantity':[1,1,1,1],'price':[20,32,24,15]}
+# d=pd.DataFrame(v)
+# print(d)
 #
 # #-----------------------------------------------------------------------------------------------------
 # #                                 Series
@@ -66,17 +67,16 @@
 #
 # #                         csv file reading
 #
-# # import pandas as pd
-# #
-# #
-# # df=pd.read_csv(r"C:\Users\Sreelaya K P\Downloads\annual-enterprise-survey-2024-financial-year-provisional.csv")
-# # # df=pd.read_csv(r"C:\Users\Sreelaya K P\Downloads\annual-enterprise-survey-2024-financial-year-provisional.csv",na_values=['n.a.','not available'])
-# # #df.shape
-# # #print(df.head(3))
-# # #print(df.tail())
-# # #df.tail(3)
-# # print(df)
-#
+# import pandas as pd
+
+# df=pd.read_csv(r"C:\Users\Sreelaya K P\Downloads\annual-enterprise-survey-2024-financial-year-provisional.csv")
+# df=pd.read_csv(r"C:\Users\Sreelaya K P\Downloads\annual-enterprise-survey-2024-financial-year-provisional.csv",na_values=['n.a.','not available'])
+# df.shape
+# print(df.head(3))
+# print(df.tail())
+# df.tail(3)
+# print(df)
+
 # #----------------------------------------------------------------------------------------------------------------------------------------------
 #
 # import pandas as pd
@@ -131,10 +131,7 @@
 # print(df['age'])
 
 #---------------------------------------------------------------------------------------------------
-# import pandas as pd
-# df=pd.read_csv(r"C:\Users\Sreelaya K P\Downloads\titanic (1).csv")
-# print(df.shape)
-# print(df.isnull())
+
 
 
 

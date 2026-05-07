@@ -37,24 +37,28 @@
 #==================================================================================
 
 #           Relational plot -> lineplot and scatterplot
-
-#print(df['species'])
+# import seaborn as sns
+# import matplotlib.pyplot as plt
+# from pandas.core.interchange.dataframe_protocol import DataFrame
+#
+# df=sns.load_dataset('iris')
+# print(df['species'])
 # sns.lineplot(x='sepal_length',y='sepal_width',data=df,hue='species')
-#sns.scatterplot(x='sepal_length',y='sepal_width',data=df,hue='species',palette='rainbow')
+# sns.scatterplot(x='sepal_length',y='sepal_width',data=df,hue='species',palette='rainbow')
 # plt.grid(ls=':',color='black')
-#plt.show()
+# plt.show()
 
 #------------------------------------------------------------------------------------
 
 #         Categorical plot -> barplot and boxplot and violin plot
 
-# import matplotlib.pyplot as plt
-# import seaborn as sns
-#
-# df=sns.load_dataset('iris')
-# sns.barplot(x='species',y='sepal_length',data=df,hue='species',saturation=.1)
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#df=sns.load_dataset('iris')
+#sns.barplot(x='species',y='sepal_length',data=df,hue='species',saturation=.1)
 #sns.boxplot(x='sepal_length',y='sepal_width',data=df,hue='species',palette='deep')
-# sns.violinplot(x='species',y='sepal_width',data=df,hue='species')
+#sns.violinplot(x='species',y='sepal_width',data=df,hue='species')
 #plt.show()
 
 #------------------------------------------------------------------------------------------
