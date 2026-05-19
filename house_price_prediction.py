@@ -1,3 +1,5 @@
+             #    California House price prediction
+
 import pandas as pd
 import numpy as np
 import math
@@ -59,9 +61,6 @@ plt.ylabel('Predicted Values')
 plt.title('Actual vs Predicted House Values')
 plt.show()
 
-
-# Total Rooms vs House Value (COMPLETE BLOCK)
-
 # Step 1 - Filter first
 Q1 = df['total_rooms'].quantile(0.25)
 Q3 = df['total_rooms'].quantile(0.75)
@@ -70,15 +69,10 @@ filtered_df = df[df['total_rooms'] < (Q3 + 1.5 * IQR)].copy()
 
 # Step 2 - Then plot
 plt.figure(figsize=(10, 6))
-plt.scatter(filtered_df['total_rooms'],
-            filtered_df['median_house_value'],
-            alpha=0.05,
-            color='blue',
-            s=10)
+plt.scatter(filtered_df['total_rooms'],filtered_df['median_house_value'],alpha=0.05,color='blue',s=10)
 
 # Step 3 - Trend line
-z = np.polyfit(filtered_df['total_rooms'].values,
-               filtered_df['median_house_value'].values, 1)
+z = np.polyfit(filtered_df['total_rooms'].values,filtered_df['median_house_value'].values, 1)
 p = np.poly1d(z)
 sorted_rooms = np.sort(filtered_df['total_rooms'].values)
 plt.plot(sorted_rooms, p(sorted_rooms),
@@ -103,4 +97,8 @@ ax.tick_params(axis='y', labelsize=11)
 
 plt.tight_layout()
 plt.show()
+
+
+
+
 
