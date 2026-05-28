@@ -15,6 +15,12 @@ df = pd.read_csv(r"C:\Users\Sreelaya K P\Downloads\archive (3)\diabetes.csv")
 print(df.head())
 print(df.describe())
 
+# Missing values
+print(df.isnull().sum())
+
+# Finding text vales
+print(df.select_dtypes(include='object').columns)
+
 # Features and target
 x = df.drop("Outcome", axis=1)
 y = df["Outcome"]
@@ -39,7 +45,8 @@ print("Accuracy:", acc)
 # Report
 print(classification_report(ytest, pred))
 
-#  diabetic vs non diabetic patients using count plot
+# Visualization
+#  diabetic vs non-diabetic patients using count plot
 sns.countplot(x="Outcome", data=df)
 plt.title("Diabetes Outcome Count")
 plt.show()       # 0 - non diabetic , 1 - diabetic
@@ -48,7 +55,6 @@ plt.show()       # 0 - non diabetic , 1 - diabetic
 sns.boxplot(x="Outcome", y="BMI", data=df)
 plt.title("BMI vs Diabetes")
 plt.show()      # diabetic patients have higher BMI
-
 
 
 
