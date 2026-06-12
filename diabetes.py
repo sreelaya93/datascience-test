@@ -25,7 +25,7 @@ print(df.select_dtypes(include='object').columns)
 x = df.drop("Outcome", axis=1)
 y = df["Outcome"]
 
-# Split data
+# Split the data
 xtrain, xtest, ytrain, ytest = train_test_split(x, y,test_size=0.2,random_state=42,stratify=y)
 
 # Model

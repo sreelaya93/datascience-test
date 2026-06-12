@@ -1,3 +1,5 @@
+#                        Customer churn prediction
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -21,10 +23,11 @@ le=LabelEncoder()
 for col in df.select_dtypes(include='object').columns:
     df[col] = le.fit_transform(df[col])
 
+# Features and target
 x=df.drop('Churn',axis=1)
 y=df['Churn']
 
-# Split data
+# Split the data
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=.3,random_state=42)
 
 # Model selection
