@@ -56,10 +56,7 @@ plt.show()
 
 # confusion matrix
 cm=confusion_matrix(y_test,pred)
-sns.heatmap(cm,
-            annot=True,      # Show numbers inside cells
-            fmt='d',         # Display integers
-            cmap='Blues')    # Color scheme
+sns.heatmap(cm,annot=True,fmt='d',cmap='Blues')
 plt.title('Confusion Matrix')
 plt.xlabel('Predicted')
 plt.ylabel('Actual')
